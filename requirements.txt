@@ -1,9 +1,6 @@
-pandas
-scikit-learn
-tensorflow
-transformers
 fastapi
 uvicorn
+scikit-learn
 pandas
 python-multipart
 jinja2

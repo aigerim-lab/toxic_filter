@@ -1,9 +1,5 @@
-# preprocessing.py
-
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
-from tensorflow.keras.preprocessing.text import Tokenizer
-from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 # Загрузка данных
 def load_data():
@@ -17,13 +13,5 @@ def load_data():
 
 # TF-IDF
 def get_tfidf(X_train, X_test):
-    from sklearn.feature_extraction.text import TfidfVectorizer
     vectorizer = TfidfVectorizer(max_features=10000)
     return vectorizer.fit_transform(X_train), vectorizer.transform(X_test)
-
-
-# LSTM Tokenizer
-def get_lstm_sequences(X_train, X_test, max_len=50):
-    tokenizer = Tokenizer(num_words=10000)
-    tokenizer.fit_on_texts(X_train)
-    return pad_sequences(tokenizer.texts_to_sequences(X_train), maxlen=max_len), pad_sequences(tokenizer.texts_to_sequences(X_test), maxlen=max_len)
