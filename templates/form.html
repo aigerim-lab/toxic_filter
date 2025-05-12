@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Toxic Comment Classifier</title>
+</head>
+<body style="font-family: Arial; max-width: 600px; margin: auto; padding-top: 40px;">
+    <h2>💬 Toxic Comment Classifier</h2>
+    <form method="post" action="/predict-form">
+        <textarea name="text" rows="5" cols="60" placeholder="Enter your comment here..." required></textarea><br><br>
+        <button type="submit">Classify</button>
+    </form>
+
+    {% if prediction %}
+        <h3>Prediction Results:</h3>
+        <ul>
+        {% for label, result in prediction.items() %}
+            <li><strong>{{ label }}:</strong> {{ '✅' if result else '❌' }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>

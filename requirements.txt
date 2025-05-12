@@ -1,0 +1,9 @@
+pandas
+scikit-learn
+tensorflow
+transformers
+fastapi
+uvicorn
+pandas
+python-multipart
+jinja2
